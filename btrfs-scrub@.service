@@ -1,0 +1,9 @@
+[Unit]
+Description=Check volume for errors
+Documentation=man:btrfs-scrub
+ 
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/btrfs scrub start -Bd /dev/%I
+IOSchedulingClass=idle
+CPUSchedulingPolicy=idle
